@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  header(class="header")
+    div(class="header__bg")
+    div(class="wrapper")
+      div(class="header__content")
+        hgroup(class="header__titles")
+          h1 #{title}
+          h2 Welcome to the future
+  //-
+    header end

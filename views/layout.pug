@@ -3,18 +3,51 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatibile" content="IE=edge")
+    meta(name="description" content="This is my blog")
+    meta(name="keywords" content="blog")
+    meta(name="robots" content="follow, index")
+    meta(name="author" content="Rafal Lubomski")
+    link(rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png")
+    link(rel="mask-icon" href="images/favicons/safari-pinned-tab.svg" color="#5bbad5")
+    meta(property="og:url" content="www.mublog.com")
+    meta(property="og:title" content="My BLog")
+    meta(property="media-image" content="images/media-image.jpg")
+    meta(property="ogimage:width" content="200px")
+    meta(property="og:description" content="This is my BLog")
+    meta(property="og:type" content="projects")
+    script(src="https://kit.fontawesome.com/ea48605765.js" crossorigin="anonymous")
   body
-    header
-    nav
-      ul
-        li
-          a(href="/") Home
-        li
-          a(href="/articles") Articles
-        li
-          a(href="/contact") Contact
-        li
-          a(href="/admin") Admin
-    main
-      block content
+    nav(class="nav")
+      div(class="wrapper")
+
+        div(class="logo")
+          div(class="logo__content")
+            span MYBLOG.COM
+        //-
+          logo end
+
+        ul(class="nav__list")
+          li(class="nav__list-item")
+            a(href="/")
+              <span  class="fas fa-home"></span  >
+          li(class="nav__list-item")
+            a(href="/articles")
+              <span class="far fa-newspaper"></span>
+          li(class="nav__list-item")
+            a(href="/contact")
+              <span class="fas fa-mail-bulk"></span>
+          li(class="nav__list-item")
+            a(href="#")
+              <span class="fas fa-search"></span>
+          li(class="nav__list-item")
+            a(href="/admin")
+              <span class="fas fa-sign-in-alt"></span>
+    //-
+      nav end
+    block content
     footer
