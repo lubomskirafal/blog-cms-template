@@ -1,0 +1,113 @@
+
+.footer .wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+}
+
+@media (min-width: 640px) {
+    .footer .wrapper {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+}
+
+/*media links*/
+.footer__media-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+
+.footer__media-list-item {
+    font-size: 20px;
+    color: var(--main-fc);
+}
+
+.footer__media-list-item span {
+    transition: transform .2s linear;
+}
+
+.footer__media-list-item a:hover span {
+    transform: scale(1.4);
+}
+
+.footer__media-list-item:not(:nth-last-of-type(1)) {
+    margin: 0 calc(var(--main-spacing)) 0 0 ;
+}
+
+@media (min-width: 640px) {
+    .footer__media-list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(var(--main-spacing), -75%);
+        flex-direction: column;
+    }
+
+    .footer__media-list-item:not(:nth-last-of-type(1)) {
+        margin: 0 0 calc(var(--main-spacing)) 0 ;
+    }
+}
+
+/*media links end*/
+
+/*copyright*/
+.footer__copy {
+    margin:var(--main-spacing) 0;
+}
+
+.footer__copy span {
+    margin: 0 0 0 calc(var(--main-spacing));
+}
+
+@media (min-width: 640px) {
+    .footer__copy {
+        margin: 0 calc(var(--main-spacing)) 0 0;
+    }
+}
+/*copyright end*/
+
+/*made by*/
+.footer__madeby {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__madeby-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__madeby img{
+    width: 19px;
+    margin: 0 calc(var(--main-spacing)/2);
+}
+
+@media (min-width: 640px) {
+    .footer__madeby {
+        align-items: flex-end;
+    }
+}
+/*made by end*/
+
+/*privacy*/
+.footer__privacy {
+    margin: var(--main-spacing) 0;
+}
+
+@media (min-width: 640px) {
+    .footer__privacy {
+        margin: 0 var(--main-spacing);
+    }
+}
+/*privacy end*/
+

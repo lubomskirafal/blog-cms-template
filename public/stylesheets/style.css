@@ -4,12 +4,12 @@
 @import './components/logo.css';
 @import './components/header.css';
 @import './components/nav.css';
+@import './components/footer.css';
 
 body {
   font-family: Arial, sans-serif;
   background-color: var(--main-bgc);
   color: var(--main-fc);
-  min-height: 200vh;
 }
 
 

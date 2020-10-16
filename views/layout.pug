@@ -34,20 +34,51 @@ html
         ul(class="nav__list")
           li(class="nav__list-item")
             a(href="/")
-              <span  class="fas fa-home"></span  >
+              span(class="fas fa-home")
           li(class="nav__list-item")
             a(href="/articles")
-              <span class="far fa-newspaper"></span>
+              span(class="far fa-newspaper")
           li(class="nav__list-item")
             a(href="/contact")
-              <span class="fas fa-mail-bulk"></span>
+              span(class="fas fa-mail-bulk")
           li(class="nav__list-item")
             a(href="#")
-              <span class="fas fa-search"></span>
+              span(class="fas fa-search")
           li(class="nav__list-item")
             a(href="/admin")
-              <span class="fas fa-sign-in-alt"></span>
+              span(class="fas fa-sign-in-alt")
     //-
       nav end
     block content
-    footer
+    //-
+      main content end
+    footer(class="footer")
+      div(class="wrapper")
+        div(class="footer__media")
+          ul(class="footer__media-list")
+            li(class="footer__media-list-item")
+              a( href="#" class="footer__media-item")
+                span(class="fab fa-facebook-f")
+            li(class="footer__media-list-item")
+              a( href="#" class="footer__media-item")
+                span(class="fab fa-instagram")
+            li(class="footer__media-list-item")
+              a( href="#" class="footer__media-item")
+                span(class="fab fa-youtube")
+            li(class="footer__media-list-item")
+              a( href="#" class="footer__media-item")
+                span(class="fab fa-twitter")
+        div(class="footer__copy")
+          p Copyright
+            sup &copy
+            span MyBlog.com
+        div(class="footer__madeby")
+          span Made by
+          div(class="footer__madeby-logo")
+            img(src="../.././images/lubomski-safari-pinned-tab.svg", alt="www.lubomskirafal.pl logo")
+            a(href="www.lubomskirfal.pl" target="blank") lubomskirfal.pl
+        div(class="footer__privacy")
+          a(href="#") Privacy
+    //-
+      footer end
+          
