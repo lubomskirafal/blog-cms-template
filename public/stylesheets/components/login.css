@@ -1,8 +1,15 @@
 .login {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 72vh;
 }
+
+@media (min-width: 640px) {
+    .login {
+        min-height: 94vh;
+    }
+}
+
 .login__bg {
     position: fixed;
     z-index: -1;
