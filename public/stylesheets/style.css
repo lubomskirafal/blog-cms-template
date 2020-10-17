@@ -1,6 +1,7 @@
 @import './components/reset.css';
 @import './components/variables.css';
 @import './components/normalize.css';
+@import './components/scroller.css';
 @import './components/logo.css';
 @import './components/header.css';
 @import './components/nav.css';
