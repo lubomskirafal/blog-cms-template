@@ -1,9 +1,13 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+};
 const createError = require('http-errors');
 const cookieSession = require('cookie-session');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const config = require('./config');
 
 const indexRouter = require('./routes/index');
 const articlesRouter = require('./routes/articles');
@@ -24,11 +28,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cookieSession({
-  name: 'session',
-  keys: [/*keys*/],
-
-  /*options*/
-  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  name: config.nameSession,
+  keys: config.keySession,
+  maxAge: config.maxAgeSession
 }));
 
 app.use((req, res, next)=>{
