@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const email = 'luomskirafal@gmail.com';
+const email = 'lubomski.rafal@gmail.com';
 const password = '1234';
 
 const isValid = {
@@ -13,18 +13,14 @@ router.get('/', (req, res)=> {
 });
 
 router.post('/', (req, res)=> {
-    const body = req.body;
+    const {loginEmail, loginPsw} = req.body;
 
-    console.log(body)
+    loginEmail===email?isValid.email=true:isValid.email=false;
+    loginPsw===password?isValid.password=true:isValid.password=false;
 
-
+    if(isValid.email && isValid.password) res.redirect('./admin');
     res.redirect('/login');
 });
 
 module.exports = router;
   
-// router.post('/', (req, res)=> {
-    
-  
-//     res.redirect('/admin');
-// });
