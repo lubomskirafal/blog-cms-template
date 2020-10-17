@@ -1,5 +1,22 @@
 doctype html
-html
+//-
+  mixins
+//-
+  mix in for manu items
+mixin manuLink(fontawesome, url)
+  li(class="nav__list-item")
+    a(href=url)
+      span(class=fontawesome)
+//-
+  mix in for external social link
+mixin socialLink(fontawesome, url)
+  li(class="footer__media-list-item")
+    a( href=url class="footer__media-item")
+      span(class=fontawesome)
+//-
+  mix in for manu items end
+
+html(lang="en")
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
@@ -32,21 +49,11 @@ html
           logo end
 
         ul(class="nav__list")
-          li(class="nav__list-item")
-            a(href="/")
-              span(class="fas fa-home")
-          li(class="nav__list-item")
-            a(href="/articles")
-              span(class="far fa-newspaper")
-          li(class="nav__list-item")
-            a(href="/contact")
-              span(class="fas fa-mail-bulk")
-          li(class="nav__list-item")
-            a(href="#")
-              span(class="fas fa-search")
-          li(class="nav__list-item")
-            a(href="/admin")
-              span(class="fas fa-sign-in-alt")
+          +manuLink("fas fa-home", "/")
+          +manuLink("far fa-newspaper", "/articles")
+          +manuLink("fas fa-mail-bulk", "/contact")
+          +manuLink("fas fa-search", "#")
+          +manuLink("fas fa-sign-in-alt", "/admin")
     //-
       nav end
     block content
@@ -56,18 +63,12 @@ html
       div(class="wrapper")
         div(class="footer__media")
           ul(class="footer__media-list")
-            li(class="footer__media-list-item")
-              a( href="#" class="footer__media-item")
-                span(class="fab fa-facebook-f")
-            li(class="footer__media-list-item")
-              a( href="#" class="footer__media-item")
-                span(class="fab fa-instagram")
-            li(class="footer__media-list-item")
-              a( href="#" class="footer__media-item")
-                span(class="fab fa-youtube")
-            li(class="footer__media-list-item")
-              a( href="#" class="footer__media-item")
-                span(class="fab fa-twitter")
+            +socialLink("fab fa-facebook-f", "#")
+            +socialLink("fab fa-instagram", "#")
+            +socialLink("fab fa-youtube", "#")
+            +socialLink("fab fa-twitter", "#")
+        //-
+          media links end
         div(class="footer__copy")
           p Copyright
             sup &copy
