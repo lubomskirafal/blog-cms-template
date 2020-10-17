@@ -4,6 +4,7 @@
 @import './components/logo.css';
 @import './components/header.css';
 @import './components/nav.css';
+@import './components/login.css';
 @import './components/footer.css';
 
 body {

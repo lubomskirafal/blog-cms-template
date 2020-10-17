@@ -7,6 +7,7 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const articlesRouter = require('./routes/articles');
 const contactRouter = require('./routes/contact');
+const loginRouter = require('./routes/login');
 const adminRouter = require('./routes/admin');
 
 const app = express();
@@ -29,6 +30,7 @@ app.use((req, res, next)=>{
 app.use('/', indexRouter);
 app.use('/articles', articlesRouter);
 app.use('/contact', contactRouter);
+app.use('/login', loginRouter);
 app.use('/admin', adminRouter);
 
 
