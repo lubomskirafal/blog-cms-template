@@ -67,11 +67,19 @@
     font-weight: 100;
     font-size: 20px;
     height: 100%;
+}
+
+.nav__list-item span {
     transition: transform .2s linear;
 }
 
-.nav__list-item a:hover, a:focus {
+.nav__list-item a:hover span, a:focus span {
     transform: scale(1.4);
+}
+
+.nav__list-item--active span {
+    transform: scale(1.4);
+    text-shadow: 0 0 15px var(--main-fc);
 }
 
 

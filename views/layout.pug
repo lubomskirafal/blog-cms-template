@@ -5,7 +5,7 @@ doctype html
   mix in for manu items
 mixin manuLink(fontawesome, url)
   li(class="nav__list-item")
-    a(href=url)
+    a(href=url class=path==url?"nav__list-item--active":"")
       span(class=fontawesome)
 //-
   mix in for external social link
