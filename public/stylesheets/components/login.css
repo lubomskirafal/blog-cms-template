@@ -1,7 +1,7 @@
 .login {
     position: relative;
     width: 100%;
-    min-height: 72vh;
+    min-height: 70vh;
 }
 
 @media (min-width: 640px) {
