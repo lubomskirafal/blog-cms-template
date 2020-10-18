@@ -6,6 +6,7 @@
 @import './components/header.css';
 @import './components/nav.css';
 @import './components/login.css';
+@import './components/article-add.css';
 @import './components/footer.css';
 
 body {

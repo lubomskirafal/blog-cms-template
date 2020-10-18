@@ -1,0 +1,145 @@
+.article-add {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+}
+
+.article-add .wrapper {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* @media (min-width: 640px) {
+    .article-add .wrapper {
+        width: 100%;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+} */
+
+@media (min-width: 640px) {
+    .article-add {
+        min-height: 94vh;
+    }
+}
+
+.article-add__bg {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../images/forest-931706_1920.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.article-add__bg::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,70, .5);
+}
+
+.article-add__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 45px 45px 45fr 230fr 45px;
+    grid-template-areas: 
+        "title title"
+        "tags tags"
+        "file file"
+        "textarea textarea"
+        "button button"
+    ;
+    gap: 5px;
+    width: 100%;
+    
+    max-width: 250px;
+}
+
+@media (min-width: 640px) {
+    .article-add__form {
+        margin-top: 100px;
+        max-width: 70%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50px 50px 230fr ;
+        grid-template-areas: 
+            "title tags"
+            "file button"
+            "textarea textarea"
+        ;
+    }
+}
+
+.article-add__form-lable:nth-of-type(1){grid-area: title;}
+.article-add__form-lable:nth-of-type(2){grid-area: tags;}
+.article-add__form-lable:nth-of-type(3){grid-area: textarea;}
+.article-add__form-lable:nth-of-type(4){grid-area: file;}
+
+
+.article-add__form-input {
+    width: 100%;
+    max-height: 100%;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    color: var(--main-fc);
+    background-color: rgba(100, 100, 100, .3);
+    padding: var(--main-spacing);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#textarea {
+    height: 230px;
+    max-height: 300px;
+}
+
+
+#img {
+    font-size: 14px;
+}
+
+.article-add__form-input:active,
+.article-add__form-input:focus {
+    border-bottom: 2px solid var(--main-fc);
+}
+
+.article-add__form-input::placeholder {
+    color: #aaa;
+}
+
+.article-add__form-input:active::placeholder,
+.article-add__form-input:focus::placeholder{
+    color: var(--main-fc);
+}
+
+.article-add__form-button {
+    padding: var(--main-spacing);
+    font-size: 20px;
+    color: var(--main-fc);
+    background-color: rgba(100, 100, 100, .3);
+    border: 2px solid var(--main-fc);
+    cursor: pointer;
+    grid-area: button;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-add__form-button:focus {
+    box-shadow: 0 0 10px 1px var(--main-fc);
+}
+
