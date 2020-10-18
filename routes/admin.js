@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Article = require('../models/article');
 
 // router.all('*', (req, res, next)=> {
 //   //secure admin session
@@ -14,7 +15,7 @@ const router = express.Router();
 
 /* GET admin page. */
 router.get('/', (req, res)=> {
-  
+
   res.render('admin', { title: 'Admin panel' });
 });
 
