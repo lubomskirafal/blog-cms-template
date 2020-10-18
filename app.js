@@ -10,7 +10,15 @@ const logger = require('morgan');
 const config = require('./config');
 const mongoose = require('mongoose');
 
-mongoose.connect(config.mongoDB,{useNewUrlParser: true})
+mongoose.connect(config.mongoDB,{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+const DB = mongoose.connection;
+DB.on('error', console.error.bind(console, 'connection error'));
+DB.once('open', ()=> {
+  console.log('DB conected');
+});
 
 const indexRouter = require('./routes/index');
 const articlesRouter = require('./routes/articles');
