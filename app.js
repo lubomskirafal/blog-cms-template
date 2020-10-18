@@ -8,6 +8,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const config = require('./config');
+const mongoose = require('mongoose');
+
+mongoose.connect(config.mongoDB,{useNewUrlParser: true})
 
 const indexRouter = require('./routes/index');
 const articlesRouter = require('./routes/articles');
@@ -30,7 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieSession({
   name: config.nameSession,
   keys: config.keySession,
-  maxAge: config.maxAgeSession
+  maxAge: config.maxAgeSession,
+  resave: false
 }));
 
 app.use((req, res, next)=>{

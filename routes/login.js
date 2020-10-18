@@ -1,3 +1,4 @@
+const { log } = require('debug');
 const express = require('express');
 const router = express.Router();
 const email = 'lubomski.rafal@gmail.com';
@@ -18,8 +19,18 @@ router.post('/', (req, res)=> {
     loginEmail===email?isValid.email=true:isValid.email=false;
     loginPsw===password?isValid.password=true:isValid.password=false;
 
-    if(isValid.email && isValid.password) res.redirect('./admin');
-    res.redirect('/login');
+    if(isValid.email && isValid.password) {
+        
+        req.session = {
+            admin: true,
+            email: loginEmail,
+        };
+        
+        res.redirect('./admin');
+    }else {
+        res.redirect('/login');
+    }
+    
 });
 
 module.exports = router;
