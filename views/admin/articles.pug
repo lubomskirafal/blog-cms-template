@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+    div(class="articles")
+        div(class="articles")
+        div(class="wrapper")
+            h1=title
+            each article of articles
+                div(class="article")
+                    hgroup(class="article__titles")
+                        h2(class="article__title")= article.title
+                        p(class="aricle__timestamp")
+                            time(datetime=article.date)= article.date
+                        p(class="article__tags")= article.tags
+                    div(class="article__nav")
+                        ul
+                            li  
+                                button
+                                    <i class="fas fa-edit"></i>
+                                button
+                                    <span class="far fa-trash-alt"></span>
+                    div(class="article__img")
+                        img(src=article.img alt=article.title)
+                    div(class="article__content")
+                        p= article.content
+
+
+

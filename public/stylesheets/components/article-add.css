@@ -5,24 +5,27 @@
 }
 
 .article-add .wrapper {
+    position: relative;
     width: 100%;
     min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    flex-direction: column;
 }
 
-/* @media (min-width: 640px) {
-    .article-add .wrapper {
-        width: 100%;
-        height: 70vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
+.article-add .wrapper h1 {
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+
+@media(min-width: 640px) {
+    .article-add .wrapper h1{
+        transform: translateY(80px);
     }
-} */
+}
+
 
 @media (min-width: 640px) {
     .article-add {
@@ -55,17 +58,17 @@
 .article-add__form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 45px 45px 45fr 230fr 45px;
+    grid-template-rows: 45px 45px 45px 230fr 45px;
     grid-template-areas: 
         "title title"
         "tags tags"
-        "file file"
+        "img img"
         "textarea textarea"
         "button button"
     ;
     gap: 5px;
     width: 100%;
-    
+    overflow: hidden;
     max-width: 250px;
 }
 
@@ -77,7 +80,7 @@
         grid-template-rows: 50px 50px 230fr ;
         grid-template-areas: 
             "title tags"
-            "file button"
+            "img button"
             "textarea textarea"
         ;
     }
@@ -85,8 +88,8 @@
 
 .article-add__form-lable:nth-of-type(1){grid-area: title;}
 .article-add__form-lable:nth-of-type(2){grid-area: tags;}
-.article-add__form-lable:nth-of-type(3){grid-area: textarea;}
-.article-add__form-lable:nth-of-type(4){grid-area: file;}
+.article-add__form-lable:nth-of-type(3){grid-area: img;}
+.article-add__form-lable:nth-of-type(4){grid-area: textarea;}
 
 
 .article-add__form-input {
@@ -104,13 +107,8 @@
 #textarea {
     height: 230px;
     max-height: 300px;
+    width: 100%;
 }
-
-
-#img {
-    font-size: 14px;
-}
-
 .article-add__form-input:active,
 .article-add__form-input:focus {
     border-bottom: 2px solid var(--main-fc);

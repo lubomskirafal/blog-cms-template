@@ -4,6 +4,7 @@ block content
     div(class="article-add")
         div(class="article-add__bg")
         div(class="wrapper")
+            h1=title
             form(class="article-add__form" method="post")
                 lable(class="article-add__form-lable" for="article-title")
                     input(
@@ -11,7 +12,7 @@ block content
                             placeholder="Title" 
                             class="article-add__form-input" 
                             id="article-title"
-                            name="article-title"
+                            name="title"
                             required
                         )
                 lable(class="article-add__form-lable" for="article-tags")
@@ -20,20 +21,21 @@ block content
                             placeholder="tag, tag, tag,"  
                             class="article-add__form-input" 
                             id="article-tags"
-                            name="article-tags"
+                            name="tags"
+                        )
+                lable(class="article-add__form-lable" for="article-img")
+                    input(
+                            type="text" 
+                            placeholder="img url"  
+                            class="article-add__form-input" 
+                            id="article-img"
+                            name="img"
                         )
                 lable(class="article-add__form-lable" for="textarea")
                     textarea(
                             placeholder="Article..."  
                             class="article-add__form-input" 
                             id="textarea"
-                            name="textarea"
-                        )
-                lable(class="article-add__form-lable" for="img")
-                    input(
-                            type="file"
-                            class="article-add__form-input" 
-                            id="img"
-                            name="img"
+                            name="content"
                         )
                 button(typ="submit" class="article-add__form-button") Publish

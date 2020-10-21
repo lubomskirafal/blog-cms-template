@@ -33,22 +33,33 @@ const getTimeStamp = ()=> {
 // });
 
 /* GET admin page. */
-router.get('/', (req, res)=> {
-
-  // const article = new Article({
-  //   title: 'Pierwszy wpis na blogu',
-  //   content: 'To jest pierwszy wpis. to jest zawartośc wpisu',
-  //   date: getTimeStamp()
-  // });
+router.get('/articles/', (req, res)=> {
   
-  // article.save(err => console.log(err));
-  
-  
-  res.render('admin/index', { title: 'Admin panel' });
+  Article.find({}, (err, articles) => {
+    
+    res.render('admin/articles', { title: 'Yours articles', articles });
+  });
 });
 
-router.get('/articles/add', (req, res) =>{
-  res.render('admin/articleForm', {title: "Create article"});
+router.get('/articles/add', (req, res)=> {
+  res.render('admin/articleForm', { title: 'Add article'});
+});
+
+router.post('/articles/add', (req, res) =>{
+    const body = req.body;
+    const date = getTimeStamp();
+
+    body.date = date;
+
+    const article = new Article(body);
+    const errors = article.validateSync();
+    
+  
+    article.save( err => {
+      if(err) return res.render('admin/articleForm', { title: 'Add article', errors });
+      res.redirect('/admin/articles');
+    });
+    
 });
 
 module.exports = router;

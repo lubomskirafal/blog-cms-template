@@ -26,7 +26,7 @@ router.post('/', (req, res)=> {
             email: loginEmail,
         };
         
-        res.redirect('./admin');
+        res.redirect('./admin/articles');
     }else {
         res.redirect('/login');
     }
