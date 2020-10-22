@@ -123,14 +123,31 @@
     justify-content: center;
     top: -100px;
     left: 50%;
-    
+    width: 80vw;
     padding: var(--main-spacing);
     transform: translate(-50%, 0);
-    z-index: 2;
     background-color: var(--main-bgc);
     color: var(--second-fc);
     box-shadow: 0 0 0 2px #fff;
     overflow: hidden;
+    z-index: -2;
+    visibility: hidden;
+}
+
+.article__content--active {
+    z-index: 2;
+    visibility: visible;
+}
+
+.article__content--noActive {
+    z-index: -2;
+    visibility: hidden;
+}
+
+@media(min-width:640px) {
+    .article__content {
+        width: 50vw;
+    }
 }
 
 .article__nav {
@@ -149,13 +166,10 @@
     font-size: 16px;
     cursor: pointer;
     color: #aaa;
+    transition:  transform .1s, color .3s;
 }
 
-.article__nav ul button span{
-    transition:  transform .3s, color .3s;
-}
-
-.article__nav ul button:hover span{
+.article__nav ul button:hover{
     color: #000;
     transform: scale(1.1);
 }

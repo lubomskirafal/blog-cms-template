@@ -7,11 +7,11 @@ block content
             h1=title
             div
                 each article of articles
-                    div(class="article__thumb")
+                    div(class="article__thumb" data-id=article._id)
                         div(class="article__thumb-bg" style=`background-image: url(${article.img})`)
                         h2(class="article__title")= article.title
                         
-                    div(class="article__content")
+                    div(class="article__content article__content--noActive" data-id=article._id)
                         div(class="article__nav")
                                 ul
                                     li  
