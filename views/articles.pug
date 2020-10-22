@@ -1,4 +1,31 @@
 extends layout
 
 block content
-    h1 #{title}
+    div(class="articles")
+        div(class="articles__bg")
+        div(class="wrapper")
+            h1=title
+            div
+                each article of articles
+                    div(class="article__thumb")
+                        div(class="article__thumb-bg" style=`background-image: url(${article.img})`)
+                        h2(class="article__title")= article.title
+                        
+                    div(class="article__content")
+                        div(class="article__nav")
+                                ul
+                                    li
+                                        button(class="article__content-button article__content-button--close")
+                                            <span class="far fa-times-circle"></span>
+                        div(class="article__content-wrapper")
+                            hgroup(class="article__titles")
+                                h2(class="article__title")= article.title
+                                p(class="aricle__timestamp")
+                                    time(datetime=article.date)= article.date
+                                p(class="article__tags")= article.tags
+                            div(class="article__img" style=`background-image: url(${article.img})`)
+                            div(class="article__text")
+                                p= article.content
+
+
+
